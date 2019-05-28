@@ -39,7 +39,7 @@ out_put_result = "Minimize\n    r\nSubject to\n "
 #                                    Input Node Number                                  #
 #########################################################################################
 def input_node_number():
-    """Config file check"""
+    """Input number and check"""
     global X, Y, Z
     is_input_correct = True
 
