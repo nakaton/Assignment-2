@@ -158,6 +158,7 @@ def generate_lp_file():
 
     print(out_put_result)
 
+    # Generate LP file
     file_name = 'X' + str(X) + '_Y' + str(Y) + '_Z' + str(Z) + '.lp'
 
     file = open(file_name, 'w')
