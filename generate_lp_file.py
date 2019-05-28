@@ -310,11 +310,13 @@ def create_bounds():
         for k in range(Y):
             for j in range(Z):
                 bound += '0 <= x_' + str(i+1) + str(k+1) + str(j+1)
+                # bound += 'x_' + str(i+1) + str(k+1) + str(j+1) + ' >= 0'
 
                 bounds.append(bound)
                 bound = ""
 
     bounds.append("0 <= r")
+    # bounds.append("r >= 0")
 
     # for item in bounds:
     #     print(str(item) + '\n')
