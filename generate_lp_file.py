@@ -21,6 +21,8 @@ X = None
 Y = None
 Z = None
 
+n_ij = '2'
+
 # Constraints
 demand_constraints = []
 capacity_st_constraints = []  # source node to transit node
@@ -248,7 +250,7 @@ def create_split_paths_constraints():
                 else:
                     split_paths_constraint += 'u_' + str(i+1) + str(k+1) + str(j+1)
 
-            split_paths_constraint += ' = 2'
+            split_paths_constraint += (' = ' + n_ij)
             split_paths_constraints.append(split_paths_constraint)
             split_paths_constraint = ""
 
@@ -265,8 +267,8 @@ def create_equal_split_flow_constraints():
     for i in range(X):
         for k in range(Y):
             for j in range(Z):
-                equal_split_flow_constraint = '2 x_' + str(i+1) + str(k+1) + str(j+1) + ' - ' + str(2 * (i+1) + (j+1)) \
-                                              + ' u_' + str(i+1) + str(k+1) + str(j+1) + ' = 0'
+                equal_split_flow_constraint = n_ij + ' x_' + str(i+1) + str(k+1) + str(j+1) + ' - ' \
+                                              + str(2 * (i+1) + (j+1)) + ' u_' + str(i+1) + str(k+1) + str(j+1) + ' = 0'
 
                 equal_split_flow_constraints.append(equal_split_flow_constraint)
                 equal_split_flow_constraint = ""
